@@ -1,23 +1,22 @@
 
-/* Paleta en armonía con la tarjeta */
+
 :root {
-  --bg: #ffffff;           /* Fondo principal blanco */
-  --bg-light: #f4f8f7;     /* Fondo claro para secciones */
+  --bg: #ffffff;           /* Fondo blanco */
+  --bg-light: #f4f8f7;     /* Fondo claro para tarjetas */
   --primary: #53b3b9;      /* Verde agua principal */
   --accent: #7ee787;       /* Verde menta para acentos */
   --text: #34495e;         /* Texto gris oscuro */
   --subtext: #6c757d;      /* Texto secundario gris */
-  --card: #e9f5f4;         /* Fondo de tarjetas */
+  --card: #e9f5f4;         /* Fondo de tarjetas en tono suave */
 }
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Tipografía */
+
 body {
   font-family: "Inter", sans-serif;
   background: var(--bg);
@@ -25,7 +24,6 @@ body {
   line-height: 1.6;
 }
 
-/* Encabezado */
 header {
   display: flex;
   align-items: center;
@@ -35,12 +33,14 @@ header {
   color: #fff;
 }
 
+/* Contenedor nombre + animación */
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 8px; /* espacio pequeño entre texto e imagen */
 }
 
+/* Animación pequeña */
 #animacion {
   width: 40px;
   height: 40px;
@@ -55,23 +55,20 @@ header {
 /* Navegación */
 nav a {
   margin-left: 15px;
-  color: #fff;
+  color: white;
   text-decoration: none;
-  font-weight: 600;
 }
 
 nav a:hover {
   color: var(--accent);
 }
 
-/* Hero */
 .hero {
   padding: 6rem 5%;
   text-align: center;
 }
 
 .hero h1 {
-  font-family: "Merriweather", serif;
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -89,7 +86,6 @@ nav a:hover {
   font-size: 1.1rem;
 }
 
-/* Botones */
 .btn {
   display: inline-block;
   padding: 0.8rem 1.8rem;
@@ -106,13 +102,11 @@ nav a:hover {
   opacity: 0.8;
 }
 
-/* Secciones */
 section {
   padding: 4rem 5%;
 }
 
 .section-title {
-  font-family: "Merriweather", serif;
   font-size: 2rem;
   margin-bottom: 2rem;
   font-weight: 700;
@@ -120,7 +114,6 @@ section {
   padding-left: 1rem;
 }
 
-/* Tarjetas */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -144,16 +137,14 @@ section {
   transform: translateY(-5px);
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 2rem 5%;
-  border-top: 1px solid #cfd8dc;
+  border-top: 1px solid #30363d;
   color: var(--subtext);
   margin-top: 3rem;
 }
-
-/* Detalles de proyectos */
+/* Estilos para las páginas de proyectos */
 .project-detail {
   max-width: 1200px;
   margin: 0 auto;
@@ -168,15 +159,14 @@ footer {
 }
 
 .project-header h1 {
-  font-family: "Merriweather", serif;
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--accent);
+  color: #7ee787;
 }
 
 .project-meta {
   font-size: 1.1rem;
-  color: var(--primary);
+  color: #53b3b9;
   font-style: italic;
 }
 
@@ -184,10 +174,21 @@ footer {
   line-height: 1.8;
 }
 
+.project-overview {
+  margin-bottom: 3rem;
+}
+
 .project-overview h2 {
-  color: var(--accent);
+  color: #7ee787;
   margin-bottom: 1rem;
   font-size: 1.8rem;
+}
+
+.project-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 .detail-section {
@@ -203,8 +204,13 @@ footer {
   font-size: 1.3rem;
 }
 
+.detail-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 .detail-section li {
-  color: var(--text);
+  color:#34495e;
   margin-bottom: 0.5rem;
   padding-left: 1.5rem;
   position: relative;
@@ -217,11 +223,29 @@ footer {
   left: 0;
 }
 
-/* Botones secundarios */
+.project-links {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.project-links .btn {
+  margin: 0 0.5rem;
+}
+
+/* Estilos para las tarjetas de proyectos en index.html */
+.card-links {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .btn-secondary {
   background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
+  color: #3498db;
+  border: 2px solid #3498db;
   padding: 0.5rem 1rem;
   text-decoration: none;
   border-radius: 5px;
@@ -229,7 +253,7 @@ footer {
 }
 
 .btn-secondary:hover {
-  background: var(--primary);
+  background: #3498db;
   color: white;
 }
 
@@ -256,4 +280,52 @@ footer {
     text-align: center;
   }
 }
+/* Formulario de automatización */
+.form-card {
+  max-width: 600px;
+  margin: 0 auto;
+}
 
+.automation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: var(--subtext);
+  margin-bottom: 0.3rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: var(--bg);
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  color: var(--text);
+  font-family: inherit;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--subtext);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+select {
+  cursor: pointer;
+}
